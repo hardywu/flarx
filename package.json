@@ -1,0 +1,27 @@
+{
+  "name": "flarx",
+  "version": "0.0.1",
+  "main": "src/main.js",
+  "dependencies": {},
+  "description": "A cross-platform data visualization app",
+  "devDependencies": {
+    "electron-prebuilt": "^0.33.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "electron.js",
+    "data visualization"
+  ],
+  "author": "Hardy Wu",
+  "license": "GPLv2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hardywu/flarx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hardywu/flarx/issues"
+  },
+  "homepage": "https://github.com/hardywu/flarx"
+}

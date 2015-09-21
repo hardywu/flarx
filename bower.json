@@ -1,0 +1,30 @@
+{
+  "name": "flarx",
+  "version": "0.0.1",
+  "homepage": "https://github.com/hardywu/flarx",
+  "authors": [
+    "hardywu <hardy0wu@gmail.com>"
+  ],
+  "description": "A cross-platform data visualization app",
+  "main": "./app/index.js",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "keywords": [
+    "d3.js",
+    "electron.js",
+    "GUI"
+  ],
+  "license": "GPLv2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "highstock": "highstock-release#~2.1.8"
+  }
+}
