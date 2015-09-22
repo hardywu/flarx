@@ -10,10 +10,10 @@ check the `./examples/example.jshs` to see how the file format is.
 
 ------------
 
-tray icon is generated at http://www.iconsplace.com
-
-
-## License
+### License
 Flarx is distributed under GPLv2 license.
 
 The dependence, [Highsoft software product](http://shop.highsoft.com/highstock.html), is not free for commercial use either.
+
+tray icon is generated at http://www.iconsplace.com
+

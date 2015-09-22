@@ -2,13 +2,35 @@
   "name": "flarx",
   "version": "0.0.1",
   "main": "src/main.js",
-  "dependencies": {},
+  "dependencies": {
+    "electron-builder": "^2.0.0"
+  },
   "description": "A cross-platform data visualization app",
   "devDependencies": {
+    "compression": "^1.5.2",
+    "electron-builder": "^2.0.0",
+    "electron-packager": "^5.1.0",
     "electron-prebuilt": "^0.33.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "clean": "rm -rf ./dist",
+    "clean:osx": "rm -rf ./dist/Flarx-darwin-x64",
+    "clean:linux32": "rm -rf ./dist/Flarx-linux-ia32",
+    "clean:linux64": "rm -rf ./dist/Flarx-linux-x64",
+    "clean:win": "rm -rf ./dist/Flarx-win32-ia32",
+    "build": "npm run clean && npm run build:osx && npm run build:linux && npm run build:win",
+    "build:osx": "npm run clean:osx && electron-packager ./ Flarx --out=dist --platform=darwin --arch=x64 --version=0.33.0 --icon=assets/osx/icon.icns",
+    "build:linux32": "npm run clean:linux32 && electron-packager ./ Flarx --out=dist --platform=linux --arch=ia32 --version=0.33.0 --icon=assets/linux/icon.ico",
+    "build:linux64": "npm run clean:linux64 && electron-packager ./ Flarx --out=dist --platform=linux --arch=x64 --version=0.33.0 --icon=assets/linux/icon.ico",
+    "build:linux": "npm run build:linux32 && npm run build:linux64",
+    "tar": "tar -zcvf sf.tar.gz sdf",
+    "build:win": "npm run clean:win && electron-packager ./ Flarx --out=dist --platform=win32 --arch=ia32 --version=0.33.0 --icon=assets/win/icon.ico",
+    "pack": "npm run pack:osx && npm run pack:win && npm run pack:linux",
+    "pack:osx": "npm run build:osx && electron-builder \"dist/Flarx-darwin-x64/Flarx.app\" --platform=osx --out=\"dist/Flarx-darwin-x64\" --config=packager.json",
+    "pack:linux": "npm run build:linux && tar -zcvf Flarx-linux-x86.tar.gz \"dist/Flarx-linux-x64\"  && tar -zcvf Flarx-linux-x64.tar.gz \"dist/Flarx-linux-ia32\"",
+    "pack:win": "npm run build:win && electron-builder \"dist/Flarx-win32-ia32\" --platform=win --out=\"dist/Flarx-win32-ia32\" --config=packager.json"
   },
   "keywords": [
     "electron.js",

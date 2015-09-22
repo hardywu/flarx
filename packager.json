@@ -1,0 +1,20 @@
+{
+	"osx" : {
+		"title": "Flarx",
+		"background": "assets/osx/installer.png",
+		"icon": "assets/osx/mount.icns",
+		"icon-size": 80,
+		"contents": [
+			{ "x": 238, "y": 144, "type": "link", "path": "/Applications" },
+			{ "x": 22, "y": 144, "type": "file" }
+		]
+	},
+	"linux" : {
+		"title" : "Flarx",
+		"icon" : "assets/linux/icon.ico"
+	},
+	"win" : {
+		"title" : "Flarx",
+		"icon" : "assets/win/icon.ico"
+	}
+}
