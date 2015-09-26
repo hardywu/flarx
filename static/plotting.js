@@ -34,6 +34,7 @@ window.addEventListener("load",  function() {
 		  try {
 			  if (err) throw err;
 			  obj = JSON.parse(data);
+        obj["chart"] = obj["chart"] || {};
 			  obj["chart"]["renderTo"] = "container";
 			  chart = new Highcharts.Chart(obj)
 			  console.log('Open file ', filePath);
