@@ -25,7 +25,7 @@ app.on('window-all-closed', function() {
 });
 
 app.on('open-file', function(e, path) {
-	mainWindow.webContents.send('open-file', path)
+  mainWindow.webContents.send('open-file', path)
 });
 
 // This method will be called when Electron has finished
@@ -36,6 +36,9 @@ app.on('ready', function() {
 
   // and load the index.html of the app.
   mainWindow.loadUrl('file://' + __dirname + '/../static/index.html');
+
+  // Open the DevTools.
+  mainWindow.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
@@ -77,18 +80,22 @@ app.on('ready', function() {
     label: "File",
     submenu: [
       { label: "Open File", accelerator: "Command+O", click: function() {
-      		filenames = dialog.showOpenDialog({
-      			properties: [ 'openFile'],
-      			filters: [
-      				{ name: 'JS Charts', extensions: ['jshs', 'jsd3'] },
-      				{ name: 'All Files', extensions: ['*'] }
-    				]
-      		});
-      		if (filenames != undefined) {
-	    			mainWindow.webContents.send('open-file', filenames[0]);
-	    		}
-	      }
-	    }
+          filenames = dialog.showOpenDialog({
+            properties: [ 'openFile'],
+            filters: [
+              { name: 'JS Charts', extensions: ['jshs', 'jsd3'] },
+              { name: 'All Files', extensions: ['*'] }
+            ]
+          });
+          if (filenames != undefined) {
+            mainWindow.webContents.send('open-file', filenames[0]);
+          }
+        }
+      },
+      { label: "Reload File", accelerator: "Command+R", click: function() {
+          mainWindow.webContents.send('reload-file');
+        }
+      }
     ]}
   ];
 
