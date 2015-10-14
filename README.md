@@ -1,10 +1,14 @@
 # flarx
 A cross-platform d3/highcharts data visualization app
 
-## Supported File Format: .jshs, .jsd3
-flarx is now supporting highcharts (and highstock) json style format.
-d3.js data file support is under development.
+## Feature
 
+- [x] Support HighCharts json style format image (default extension .jshs)
+- [ ] Support D3 image (default extension .jsd3)
+- [ ] Support big data image through a separate data SQliate file 
+- [ ] Support remote data source image 
+
+## Example 
 check the `./examples/example.jshs` to see how the file format is.
 
 
